@@ -11,7 +11,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Load & cache dependencies
         uses: ./.github/actions/cached  
-      - name: Lint code
+        with:
+          caching: 'false'
+      - name: Lint code    
         run: npm run lint
   test:
     runs-on: ubuntu-latest
